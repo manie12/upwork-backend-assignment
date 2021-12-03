@@ -44,38 +44,34 @@ const Query = () => {
                     onChange={(e) => setSearch(e.target.value)}
                 />
             </div>
-            {loading ? (
-                <Box sx={{ width: '100%' }}>
-                    <LinearProgress />
-                </Box>
-            ) :
-                <TableContainer component={Paper}>
-                    <Table sx={{ minWidth: 650 }} aria-label="simple table">
-                        <TableHead>
-                            <TableRow>
-                                <TableCell>Dessert (100g serving)</TableCell>
-                                <TableCell align="right">Calories</TableCell>
-                                <TableCell align="right">Fat&nbsp;(g)</TableCell>
-                            </TableRow>
-                        </TableHead>
-                        <TableBody>
-                            {FilterItems && FilterItems?.map((row) => (
 
-                                <TableRow
-                                    key={row?._id}
-                                    sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-                                >
-                                    <TableCell component="th" scope="row">
-                                        {row?.movie}
-                                    </TableCell>
-                                    <TableCell align="right">{row?.rating}</TableCell>
-                                    <TableCell align="right">{row?.duration}</TableCell>
-                                </TableRow>
-                            ))}
-                        </TableBody>
-                    </Table>
-                </TableContainer>
-            }
+            <TableContainer component={Paper}>
+                <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                    <TableHead>
+                        <TableRow>
+                            <TableCell>Dessert (100g serving)</TableCell>
+                            <TableCell align="right">Calories</TableCell>
+                            <TableCell align="right">Fat&nbsp;(g)</TableCell>
+                        </TableRow>
+                    </TableHead>
+                    <TableBody>
+                        {FilterItems && FilterItems?.map((row) => (
+
+                            <TableRow
+                                key={row?._id}
+                                sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                            >
+                                <TableCell component="th" scope="row">
+                                    {row?.movie}
+                                </TableCell>
+                                <TableCell align="right">{row?.rating}</TableCell>
+                                <TableCell align="right">{row?.duration}</TableCell>
+                            </TableRow>
+                        ))}
+                    </TableBody>
+                </Table>
+            </TableContainer>
+
 
         </>
     )
