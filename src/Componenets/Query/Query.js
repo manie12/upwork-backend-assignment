@@ -49,9 +49,9 @@ const Query = () => {
                 <Table sx={{ minWidth: 650 }} aria-label="simple table">
                     <TableHead>
                         <TableRow>
-                            <TableCell>Dessert (100g serving)</TableCell>
-                            <TableCell align="right">Calories</TableCell>
-                            <TableCell align="right">Fat&nbsp;(g)</TableCell>
+                            <TableCell>Movies</TableCell>
+                            <TableCell align="right">Ratings</TableCell>
+                            <TableCell align="right">Duration&nbsp;</TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
