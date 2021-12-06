@@ -5,8 +5,7 @@ import Grid from '@mui/material/Grid'
 import { api } from '../../api';
 
 
-const Form = () => {
-    const [post, setPost] = useState({ movie: "", rating: "", duration: "" })
+const Form = ({ post, setPost }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();

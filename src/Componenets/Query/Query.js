@@ -11,29 +11,29 @@ import { api } from '../../api';
 import Box from '@mui/material/Box';
 import LinearProgress from '@mui/material/LinearProgress';
 
-const Query = () => {
+const Query = ({ post }) => {
     const [content, setContent] = useState();
     const [search, setSearch] = useState("");
     const [loading, setLoading] = useState(false);
+
     useEffect(() => {
-        setLoading(true)
-        function fetchData() {
-            api.get("/").then((response) => {
-                setContent(response?.data);
-                setLoading(false)
-
-            });
-        }
         fetchData();
-    }, [content])
 
+        return () => { }
 
+    }, [post])
 
+    function fetchData() {
+        api?.get("/").then((response) => {
+            setContent(response?.data);
+
+        });
+    }
     const FilterItems = content?.filter((cont) => {
         return cont?.movie?.toLowerCase().includes(search?.toLowerCase())
     });
 
-
+    console.log(FilterItems)
     return (
         <>
             <div style={{ marginTop: "2em", marginBottom: "1em" }}>
